@@ -1,0 +1,31 @@
+import java.io.*;
+import java.sql.SQLOutput;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        String B=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        System.out.println(A.length()+B.length());
+        if(A.compareTo(B)>0){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+        String s1 = capitalizeFirstLetter(A);
+        String s2 = capitalizeFirstLetter(B);
+        System.out.println(s1 + " " + s2);
+        sc.close();
+
+    }
+
+    private static String capitalizeFirstLetter(String s1) {
+        return s1.substring(0, 1).toUpperCase() + s1.substring(1);
+
+    }
+}
