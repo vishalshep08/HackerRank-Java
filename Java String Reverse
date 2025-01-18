@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next();
+        /* Enter your code here. Print output to STDOUT. */
+        if(isPalindrome(A)){
+            System.out.println("Yes");
+        }
+        else{
+            System.out.println("No");
+        }
+    }
+    private static boolean isPalindrome(String str) {
+        // Convert to lowercase to make the check case-insensitive
+        str = str.toLowerCase();
+
+        // Reverse the string and compare with the original
+        String reversed = new StringBuilder(str).reverse().toString();
+        return str.equals(reversed);
+    }
+}
+
+
+
