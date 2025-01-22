@@ -1,69 +1,70 @@
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
-
     public static void main(String[] args) {
-        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int k = sc.nextInt();
+        Scanner in = new Scanner(System.in);
 
+        // Read the size of bitsets and the number of operations
+        int n = in.nextInt(); // Size of bitsets
+        int m = in.nextInt(); // Number of operations
+
+        // Initialize two BitSet objects
         BitSet bitSet = new BitSet(n);
         BitSet bitSet2 = new BitSet(n);
 
-        for(int i = 0; i < k; i++){
-           String Operations = sc.next();
-           int x = sc.nextInt();
-           int y = sc.nextInt();
+        // Process each operation
+        for (int i = 0; i < m; i++) {
+            String operation = in.next(); // Operation type
+            int x = in.nextInt();         // Target bitset (1 or 2)
+            int y = in.nextInt();         // Second operand (index or bitset)
 
-           switch(Operations){
-               case "AND":
-                   if (x == 1) {
-                       bitSet.and(bitSet2);
-                   } else {
-                       bitSet.and(bitSet2);
-                   }
-                   break;
+            // Perform the operation
+            switch (operation) {
+                case "AND":
+                    if (x == 1) {
+                        bitSet.and(bitSet2);
+                    } else {
+                        bitSet2.and(bitSet);
+                    }
+                    break;
 
-               case "OR":
-                   if (x == 1) {
-                       bitSet.or(bitSet2);
-                   } else {
-                       bitSet2.or(bitSet);
-                   }
-                   break;
+                case "OR":
+                    if (x == 1) {
+                        bitSet.or(bitSet2);
+                    } else {
+                        bitSet2.or(bitSet);
+                    }
+                    break;
 
-               case "XOR":
-                   if (x == 1) {
-                       bitSet.xor(bitSet2);
-                   } else {
-                       bitSet2.xor(bitSet);
-                   }
-                   break;
+                case "XOR":
+                    if (x == 1) {
+                        bitSet.xor(bitSet2);
+                    } else {
+                        bitSet2.xor(bitSet);
+                    }
+                    break;
 
-               case "FLIP":
-                   if (x == 1) {
-                       bitSet.flip(y);
-                   } else {
-                       bitSet2.flip(y);
-                   }
-                   break;
+                case "FLIP":
+                    if (x == 1) {
+                        bitSet.flip(y);
+                    } else {
+                        bitSet2.flip(y);
+                    }
+                    break;
 
-               case "SET":
-                   if (x == 1) {
-                       bitSet.set(y);
-                   } else {
-                       bitSet2.set(y);
-                   }
-                   break;
-           }
+                case "SET":
+                    if (x == 1) {
+                        bitSet.set(y);
+                    } else {
+                        bitSet2.set(y);
+                    }
+                    break;
+            }
+
+            // Output the number of set bits in both bitsets
             System.out.println(bitSet.cardinality() + " " + bitSet2.cardinality());
         }
 
-//        in.close();
+        in.close();
     }
 }
