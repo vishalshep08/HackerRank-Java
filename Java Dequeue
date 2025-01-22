@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class test {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+
+        // Read input
+        int n = in.nextInt(); // Total number of elements
+        int m = in.nextInt(); // Window size
+        Deque<Integer> deque = new ArrayDeque<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        int maxDistinct = 0;
+
+        for (int i = 0; i < n; i++) {
+            int num = in.nextInt();
+
+            // Add new element to the deque and the map
+            deque.add(num);
+            if (map.containsKey(num)) {
+                map.put(num, map.get(num) + 1);
+            } else {
+                map.put(num, 1);
+            }
+
+            // If deque size exceeds the window size, remove the oldest element
+            if (deque.size() > m) {
+                int removed = deque.remove();
+                if (map.containsKey(removed)) {
+                    map.put(removed, map.get(removed) - 1);
+
+                    // If the count of the removed element becomes 0, remove it from the map
+                    if (map.get(removed) == 0) {
+                        map.remove(removed);
+                    }
+                }
+            }
+
+            // Update the maximum distinct count
+            maxDistinct = Math.max(maxDistinct, map.size());
+        }
+
+        // Output the result
+        System.out.println(maxDistinct);
+        in.close();
+    }
+}
+
