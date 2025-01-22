@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class TagParser {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = Integer.parseInt(in.nextLine()); // Number of lines
+
+        // Regular expression to match valid tags and content
+        String regex = "<([^>]+)>([^<]*)</\\1>";
+        Pattern pattern = Pattern.compile(regex);
+
+        while (n-- > 0) {
+            String line = in.nextLine();
+            Matcher matcher = pattern.matcher(line);
+
+            boolean found = false;
+            while (matcher.find()) {
+                String content = matcher.group(2); // Extract content between tags
+                if (!content.isEmpty()) {
+                    System.out.println(content);
+                    found = true;
+                }
+            }
+
+            if (!found) {
+                System.out.println("None");
+            }
+        }
+
+        in.close();
+    }
+}
