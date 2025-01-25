@@ -5,8 +5,8 @@ public class Solution {
         Scanner in = new Scanner(System.in);
 
         // Read the size of bitsets and the number of operations
-        int n = in.nextInt(); // Size of bitsets
-        int m = in.nextInt(); // Number of operations
+        int n = in.nextInt(); 
+        int m = in.nextInt();
 
         // Initialize two BitSet objects
         BitSet bitSet = new BitSet(n);
