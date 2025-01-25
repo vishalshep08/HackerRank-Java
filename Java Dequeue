@@ -23,7 +23,7 @@ public class test {
                 map.put(num, 1);
             }
 
-            // If deque size exceeds the window size, remove the oldest element
+            
             if (deque.size() > m) {
                 int removed = deque.remove();
                 if (map.containsKey(removed)) {
