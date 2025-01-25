@@ -5,7 +5,7 @@ public class test {
         Scanner in = new Scanner(System.in);
 
         // Read input
-        int n = in.nextInt(); // Total number of elements
+        int n = in.nextInt(); 
         int m = in.nextInt(); // Window size
         Deque<Integer> deque = new ArrayDeque<>();
         HashMap<Integer, Integer> map = new HashMap<>();
