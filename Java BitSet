@@ -6,7 +6,6 @@ public class Solution {
         // Read the size of bitsets and the number of operations
         int n = in.nextInt(); 
         int m = in.nextInt();
-
         // Initialize two BitSet objects
         BitSet bitSet = new BitSet(n);
         BitSet bitSet2 = new BitSet(n);
