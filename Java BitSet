@@ -61,7 +61,6 @@ public class Solution {
             // Output the number of set bits in both bitsets
             System.out.println(bitSet.cardinality() + " " + bitSet2.cardinality());
         }
-
         in.close();
     }
 }
