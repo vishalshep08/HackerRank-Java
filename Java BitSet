@@ -10,7 +10,6 @@ public class Solution {
         // Initialize two BitSet objects
         BitSet bitSet = new BitSet(n);
         BitSet bitSet2 = new BitSet(n);
-
         // Process each operation
         for (int i = 0; i < m; i++) {
             String operation = in.next(); // Operation type
