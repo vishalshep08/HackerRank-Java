@@ -3,7 +3,6 @@ import java.util.*;
 public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-
         // Read the size of bitsets and the number of operations
         int n = in.nextInt(); 
         int m = in.nextInt();
