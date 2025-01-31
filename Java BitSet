@@ -1,4 +1,4 @@
-import java.util.*;
+SEimport java.util.*;
 
 public class Solution {
     public static void main(String[] args) {
@@ -57,7 +57,6 @@ public class Solution {
                     }
                     break;
             }
-
             // Output the number of set bits in both bitsets
             System.out.println(bitSet.cardinality() + " " + bitSet2.cardinality());
         }
